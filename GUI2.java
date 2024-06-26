@@ -166,8 +166,9 @@ public class GUI2 extends JFrame implements ActionListener {
                     default:
                         g.setColor(Color.WHITE);
                 }
-                g2.fillOval(posFelder[0][figurenPos] + 5, posFelder[1][figurenPos] + 5, 50, 50);
-            }
+                g2.fillOval(posFelder[0][figurenPos] + 5, posFelder[1][figurenPos] + 5, 50, 50);                
+            }              
+
             for(int j = 0; j < 16; j++){
                 int spielerImFeld = spieler;
                 switch (spielerImFeld) {
@@ -187,14 +188,17 @@ public class GUI2 extends JFrame implements ActionListener {
                         g.setColor(Color.WHITE);
                         break;
                 }
-                if (i == allefigurenPos[j]) {
+                if (i == allefigurenPos[j] && allefigurenPos[j] < 40) {
                     g2.fillOval(posFelder[0][i] + 5, posFelder[1][i] + 5, 50, 50);
                 }
-                if(spielerImFeld ==5){
+                if(spielerImFeld ==4){
                     spielerImFeld = 0;
                 }else{
                     spielerImFeld++;
                 }
+            }
+            if(i < 16 && allefigurenPos[i] >= 40) {
+                g2.fillOval(posFelder[0][posDefaultFelder[0][i]] + 5, posFelder[1][posDefaultFelder[1][i]] + 5, 50, 50);
             }
                 
             
@@ -251,7 +255,7 @@ public class GUI2 extends JFrame implements ActionListener {
                     default:
                         g.setColor(Color.WHITE);
                 }
-                g.fillOval(posFelder[0][posEndFelder[0][figurenPos - 40] - 1] + 5, posFelder[1][posEndFelder[1][figurenPos -40] - 1] + 5,50, 50);
+                g.fillOval(posFelder[0][posEndFelder[0][figurenPos - 40] - 1] + 5, posFelder[1][posEndFelder[1][figurenPos -39] - 2] + 5,50, 50);
                 
             }
         }
