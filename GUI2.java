@@ -255,7 +255,10 @@ public class GUI2 extends JFrame implements ActionListener {
                     default:
                         g.setColor(Color.WHITE);
                 }
-                g.fillOval(posFelder[0][posEndFelder[0][figurenPos - 40] - 1] + 5, posFelder[1][posEndFelder[1][figurenPos -39] - 2] + 5,50, 50);
+                if(figurenPos > 40){
+                    g.fillOval(posFelder[0][posEndFelder[0][figurenPos - 40] - 1] + 5, posFelder[1][posEndFelder[1][figurenPos -39] - 2] + 5,50, 50);
+                }
+                
                 
             }
         }
